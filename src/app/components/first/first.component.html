@@ -1,0 +1,21 @@
+<form [formGroup]="userForm" > 
+    <input [ngClass]="email_validation() ? 'green': 'red'" type="text" formControlName="email" placeholder="email">
+    <div *ngIf="email_validation()">email is valid</div>
+    <div *ngIf="!email_validation()">email is invalid</div>
+    <br>
+    <br>
+    <input [ngClass]="password_valiation() ? 'green':'red'" type="text" formControlName="password" placeholder="password">
+    <div *ngIf="!password_valiation()">{{password_error}}</div>
+    <br>
+    <br>
+    <button (click)="login()">Login</button>
+</form>
+
+{{ name }}
+
+{{ response?.email }}
+
+{{ response?.pass }}
+
+
+{{ email_validation() }}
